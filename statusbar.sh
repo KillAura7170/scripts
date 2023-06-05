@@ -8,7 +8,7 @@ dte(){
 bat() {
 	bat="$(cat /sys/class/power_supply/BAT0/capacity)"
 	case "$(cat "/sys/class/power_supply/BAT0/status" 2>&1)" in
-		"Full") status="" ;;
+		"Full") status="FULL" ;;
 		"Discharging") status="" ;;
 		"Charging") status="⚡" ;;
 		"Not charging") status="" ;;
