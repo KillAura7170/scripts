@@ -28,7 +28,12 @@ Vol() {
 	echo -e "$vol"
 }
 
+Tmp() {
+	tmp="$(cat /sys/class/thermal/thermal_zone0/temp | sed 's/[0].0$//')"
+	echo -e "$tmp"
+}
+
 while true; do
-	dwm -s "📶: $(WiFi) | 🔋: $(bat) | 🔊: $(Vol) | $(dte)"
+	dwm -s "📶: $(WiFi) | 🔋: $(bat) | 🔊: $(Vol) | 🌡: $(Tmp)°C | $(dte)"
 	sleep 10s
 done &
