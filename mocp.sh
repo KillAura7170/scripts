@@ -1,3 +1,3 @@
 #! /bin/bash
 
-alacritty -e mocp
+tdrop $TERMINAL -e "mocp"
